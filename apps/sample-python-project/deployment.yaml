@@ -19,7 +19,7 @@ spec:
       - name: ghcr-secret
       containers:
       - name: app
-        image: ghcr.io/devopsvaival/sample-python-project:latest
+        image: ghcr.io/devopsvaival/sample-python-project:4
         ports:
         - containerPort: 5000
         env:
