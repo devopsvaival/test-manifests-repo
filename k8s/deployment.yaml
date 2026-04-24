@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-python-project
+  labels:
+    app: sample-python-project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-python-project
+  template:
+    metadata:
+      labels:
+        app: sample-python-project
+    spec:
+      containers:
+        - name: sample-python-project
+          image: ghcr.io/devopsvaival/sample-python-project:8ad593f-4
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+      imagePullSecrets:
+        - name: ghcr-pull-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sample-python-project
+spec:
+  type: ClusterIP
+  selector:
+    app: sample-python-project
+  ports:
+    - port: 80
+      targetPort: 8000
