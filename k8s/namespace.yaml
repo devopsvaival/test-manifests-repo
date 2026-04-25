@@ -1,0 +1,8 @@
+# PR target: devopsvaival/test-manifests-repo  →  k8s/namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test-app-claude
+  labels:
+    name: test-app-claude
+    managed-by: argocd
