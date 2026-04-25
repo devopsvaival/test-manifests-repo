@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: sample-python-project
-          image: ghcr.io/devopsvaival/sample-python-project:8ad593f-5
+          image: ghcr.io/devopsvaival/sample-python-project:2642ad7-6
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
